@@ -1,0 +1,7 @@
+D:/tempMNIST/build-mingw/CMakeFiles/TempMNIST.dir
+D:/tempMNIST/build-mingw/CMakeFiles/install/local.dir
+D:/tempMNIST/build-mingw/CMakeFiles/install.dir
+D:/tempMNIST/build-mingw/CMakeFiles/edit_cache.dir
+D:/tempMNIST/build-mingw/CMakeFiles/rebuild_cache.dir
+D:/tempMNIST/build-mingw/CMakeFiles/list_install_components.dir
+D:/tempMNIST/build-mingw/CMakeFiles/install/strip.dir

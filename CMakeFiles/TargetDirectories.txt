@@ -1,0 +1,7 @@
+/mnt/d/tempMNIST/CMakeFiles/install/strip.dir
+/mnt/d/tempMNIST/CMakeFiles/edit_cache.dir
+/mnt/d/tempMNIST/CMakeFiles/TempMNIST.dir
+/mnt/d/tempMNIST/CMakeFiles/list_install_components.dir
+/mnt/d/tempMNIST/CMakeFiles/install/local.dir
+/mnt/d/tempMNIST/CMakeFiles/rebuild_cache.dir
+/mnt/d/tempMNIST/CMakeFiles/install.dir

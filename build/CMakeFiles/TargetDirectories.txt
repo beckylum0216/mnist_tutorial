@@ -1,0 +1,4 @@
+D:/tempMNIST/build/CMakeFiles/TempMNIST.dir
+D:/tempMNIST/build/CMakeFiles/INSTALL.dir
+D:/tempMNIST/build/CMakeFiles/ALL_BUILD.dir
+D:/tempMNIST/build/CMakeFiles/ZERO_CHECK.dir
