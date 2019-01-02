@@ -8,25 +8,25 @@
 
 Layer::Layer()
 {
-    theNeurons = new Neuron[10]();
-    neuronSize = 10;
+    theLayer = new Neuron[1]();
+    layerSize = 1;
 }
 
 
 Layer::Layer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize)
 {
     std::cout << "running layer resize" << std::endl;
-   for(int ii = 0; ii < neuronSize; ii += 1)
+   for(int ii = 0; ii < layerSize; ii += 1)
    {
-       theNeurons[ii].ResizeNeuron(imgHdr, lblHdr);
+       theLayer[ii].ResizeNeuron(imgHdr, lblHdr);
    }
-   neuronSize = inputSize;
+   layerSize = inputSize;
    std::cout << "layer resized..." << std::endl;
 }
 
 Layer::~Layer()
 {
-    delete [] theNeurons;
+    delete [] theLayer;
 }
 
 Layer& Layer::operator=(Layer rhsVar)
@@ -37,12 +37,12 @@ Layer& Layer::operator=(Layer rhsVar)
 
 void Layer::Swap(Layer &rhsVar)
 {
-    std::swap(this->theNeurons, rhsVar.theNeurons);
+    std::swap(this->theLayer, rhsVar.theLayer);
 }
 
 Neuron * Layer::GetNeurons()
 {
-    return theNeurons;
+    return theLayer;
 }
 
 void Layer::ResizeLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize)
@@ -51,7 +51,7 @@ void Layer::ResizeLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize)
 
     // initialise temp neuron
     Neuron * tempNeuron;
-    tempNeuron = new Neuron[inputSize];
+    tempNeuron = new Neuron[inputSize]();
 
     // resizing temp neuron
     for(int ii = 0; ii < inputSize; ii += 1)
@@ -61,25 +61,44 @@ void Layer::ResizeLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize)
     }
 
 
-    for(int jj = 0; jj < neuronSize; jj += 1)
+    for(int ii = 0; ii < layerSize; ii += 1)
     {
-        tempNeuron[jj] = this->theNeurons[jj];
+        for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
+        {
+            for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
+            {
+                tempNeuron[ii].inputArr[jj][kk] = this->theLayer[ii].inputArr[jj][kk];
+                tempNeuron[ii].weight[jj][kk] = this->theLayer[ii].weight[jj][kk];
+            }
+        }
+
     }
 
-    neuronSize = inputSize;
+    layerSize = inputSize;
 
-    delete [] theNeurons;
+    delete [] theLayer;
 
-    theNeurons = new Neuron[inputSize]();
+    theLayer = new Neuron[inputSize]();
 
     for(int ii = 0; ii < inputSize; ii += 1)
     {
-        theNeurons[ii].ResizeNeuron(imgHdr, lblHdr);
+        theLayer[ii].ResizeNeuron(imgHdr, lblHdr);
     }
+
+
+    // copying old values
 
     for(int ii = 0; ii < inputSize; ii += 1)
     {
-        theNeurons[ii] = tempNeuron[ii];
+        for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
+        {
+            for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
+            {
+                theLayer[ii].inputArr[jj][kk] = tempNeuron[ii].inputArr[jj][kk];
+                theLayer[ii].weight[jj][kk] = tempNeuron[ii].weight[jj][kk];
+            }
+        }
+
     }
 
     delete[] tempNeuron;

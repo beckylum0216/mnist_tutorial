@@ -7,20 +7,14 @@
 
 Neuron::Neuron()
 {
-    inputArr = new GLdouble **[10]();
-    weight = new GLdouble **[10]();
 
-    for(int ii = 0; ii < 10; ii +=1)
+    inputArr = new GLdouble * [28]();
+    weight = new GLdouble * [28]();
+    for (int jj = 0; jj < 28; jj += 1)
     {
-        inputArr[ii] = new GLdouble * [28]();
-        weight[ii] = new GLdouble * [28]();
-        for (int jj = 0; jj < 28; jj += 1)
-        {
-            inputArr[ii][jj] = new GLdouble[28]();
-            weight[ii][jj] = new GLdouble[28]();
-        }
+        inputArr[jj] = new GLdouble[28]();
+        weight[jj] = new GLdouble[28]();
     }
-
 
     output = 0;
     bias = 0;
@@ -28,35 +22,30 @@ Neuron::Neuron()
 
 Neuron::Neuron(ImageHeader imgHdr, LabelHeader lblHdr)
 {
-    GLdouble *** tempArr;
-    GLdouble *** tempWeight;
+    GLdouble ** tempArr;
+    GLdouble ** tempWeight;
 
     // initialise new arrays;
-    tempArr = new GLdouble **[imgHdr.maxImages];
-    tempWeight = new GLdouble **[imgHdr.maxImages];
-    for(int ii = 0; ii < imgHdr.maxImages; ii += 1)
+
+    tempArr = new GLdouble*[imgHdr.imgWidth];
+    tempWeight = new GLdouble*[imgHdr.imgWidth];
+    for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
     {
-        tempArr[ii] = new GLdouble*[imgHdr.imgWidth];
-        tempWeight[ii] = new GLdouble*[imgHdr.imgWidth];
-        for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
+        tempArr[jj] = new GLdouble[imgHdr.imgHeight];
+        tempWeight[jj] = new GLdouble[imgHdr.imgHeight];
+    }
+
+
+
+    for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
+    {
+        for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
         {
-            tempArr[ii][jj] = new GLdouble[imgHdr.imgHeight];
-            tempWeight[ii][jj] = new GLdouble[imgHdr.imgHeight];
+            tempArr[jj][kk] = inputArr[jj][kk];
+            tempWeight[jj][kk] = weight[jj][kk];
         }
     }
 
-    for(int ii = 0; ii < imgHdr.maxImages; ii += 1)
-    {
-        for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
-        {
-            tempWeight[ii] = new GLdouble*[imgHdr.imgWidth];
-            for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
-            {
-                tempArr[ii][jj][kk] = inputArr[ii][jj][kk];
-                tempWeight[ii][jj][kk] = weight[ii][jj][kk];
-            }
-        }
-    }
 
     delete [] inputArr;
     delete [] weight;
@@ -92,58 +81,51 @@ void Neuron::Swap(Neuron &rhsNeuron)
 void Neuron::ResizeNeuron(ImageHeader imgHdr, LabelHeader lblHdr){
     std::cout << "Running neuron resize..." << std::endl;
 
-    GLdouble *** tempArr;
-    GLdouble *** tempWeight;
+    GLdouble ** tempArr;
+    GLdouble ** tempWeight;
 
     // initialise new arrays;
-    tempArr = new GLdouble **[imgHdr.maxImages];
-    tempWeight = new GLdouble **[imgHdr.maxImages];
-    for(int ii = 0; ii < imgHdr.maxImages; ii += 1)
+    tempArr = new GLdouble*[imgHdr.imgWidth];
+    tempWeight = new GLdouble*[imgHdr.imgWidth];
+    for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
     {
-        tempArr[ii] = new GLdouble*[imgHdr.imgWidth];
-        tempWeight[ii] = new GLdouble*[imgHdr.imgWidth];
-        for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
+        tempArr[jj] = new GLdouble[imgHdr.imgHeight];
+        tempWeight[jj] = new GLdouble[imgHdr.imgHeight];
+    }
+
+
+    // copying original arrays
+
+    for(int jj = 0; jj < 28; jj += 1)
+    {
+        for(int kk = 0; kk < 28; kk += 1)
         {
-            tempArr[ii][jj] = new GLdouble[imgHdr.imgHeight];
-            tempWeight[ii][jj] = new GLdouble[imgHdr.imgHeight];
+            tempArr[jj][kk] = inputArr[jj][kk];
+            tempWeight[jj][kk] = weight[jj][kk];
         }
     }
 
-    // copying original arrays
-    for(int ii = 0; ii < 10; ii += 1)
-    {
-        for(int jj = 0; jj < 28; jj += 1)
-        {
-            for(int kk = 0; kk < 28; kk += 1)
-            {
-                tempArr[ii][jj][kk] = inputArr[ii][jj][kk];
-                tempWeight[ii][jj][kk] = weight[ii][jj][kk];
-            }
-        }
-    }
 
     // clear arrays
     delete [] inputArr;
     delete [] weight;
 
     // redeclaring arrays and copying contents from temp to class arrays
-    inputArr = new GLdouble ** [imgHdr.maxImages]();
-    weight = new GLdouble ** [imgHdr.maxImages]();
-    for(int ii = 0; ii < imgHdr.maxImages; ii += 1)
-    {
-        inputArr[ii] = new GLdouble * [imgHdr.imgWidth]();
-        weight[ii] = new GLdouble * [imgHdr.imgWidth]();
+
+
+        inputArr = new GLdouble * [imgHdr.imgWidth]();
+        weight = new GLdouble * [imgHdr.imgWidth]();
         for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
         {
-            inputArr[ii][jj] = new GLdouble [imgHdr.imgHeight]();
-            weight[ii][jj] = new GLdouble [imgHdr.imgHeight]();
+            inputArr[jj] = new GLdouble [imgHdr.imgHeight]();
+            weight[jj] = new GLdouble [imgHdr.imgHeight]();
             for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
             {
-                tempArr[ii][jj][kk] = inputArr[ii][jj][kk];
-                tempWeight[ii][jj][kk] = weight[ii][jj][kk];
+                inputArr[jj][kk] = tempArr[jj][kk];
+                weight[jj][kk] = tempWeight[jj][kk];
             }
         }
-    }
+
 
     delete [] tempArr;
     delete [] tempWeight;

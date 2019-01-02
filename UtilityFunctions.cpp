@@ -70,7 +70,8 @@ LabelHeader UtilityFunctions::ReadLabelHeader(std::string theFile)
     labelHdr.magicNumber = 0;
     labelHdr.maxLabels = 0;
 
-    if(labelFile.is_open()) {
+    if(labelFile.is_open())
+    {
         labelFile.read((char *) &labelHdr.magicNumber, sizeof(labelHdr.magicNumber));
         labelHdr.magicNumber = ReverseByte(labelHdr.magicNumber);
         labelFile.read((char *) &labelHdr.maxLabels, sizeof(labelHdr.maxLabels));
@@ -82,7 +83,7 @@ LabelHeader UtilityFunctions::ReadLabelHeader(std::string theFile)
 }
 
 
-GLdouble *** UtilityFunctions::ReadImageFile(std::string theFile, ImageHeader imageHdr)
+GLdouble ** UtilityFunctions::ReadImageFile(std::string theFile, ImageHeader imageHdr)
 {
     std::cout << "Reading image file..." << std::endl;
 
@@ -104,28 +105,23 @@ GLdouble *** UtilityFunctions::ReadImageFile(std::string theFile, ImageHeader im
         imageFile.read((char *) tempHdr.imgHeight, sizeof(imageHdr.imgHeight));
 
         // Initialise array and start reading file
-        imgMatrix = new GLdouble**[imageHdr.maxImages];
-        for (int ii = 0; ii < imageHdr.maxImages; ii += 1 )
+        imgMatrix = new GLdouble*[imageHdr.imgHeight];
+        for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
         {
-            imgMatrix[ii] = new GLdouble*[imageHdr.imgHeight];
-            for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
+            imgMatrix[jj] = new GLdouble[imageHdr.imgWidth]();
+        }
+
+
+        for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
+        {
+            for(int kk = 0; kk < imageHdr.imgHeight; kk += 1)
             {
-                imgMatrix[ii][jj] = new GLdouble[imageHdr.imgWidth]();
+                unsigned char temp = 0;
+                imageFile.read((char*) &temp, sizeof(temp));
+                imgMatrix[jj][kk] = temp;
             }
         }
 
-        for (int ii = 0; ii < imageHdr.maxImages; ii += 1)
-        {
-            for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
-            {
-                for(int kk = 0; kk < imageHdr.imgHeight; kk += 1)
-                {
-                    unsigned char temp = 0;
-                    imageFile.read((char*) &temp, sizeof(temp));
-                    imgMatrix[ii][jj][kk] = temp;
-                }
-            }
-        }
 
     }
 

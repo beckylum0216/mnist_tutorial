@@ -40,17 +40,14 @@ void Perceptron::InitLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize
 
     for(int ii = 0; ii < inputSize; ii += 1)
     {
-        for(int jj = 0; jj < imgHdr.maxImages; jj += 1)
-        {
-            for(int kk = 0; jj < imgHdr.imgWidth; kk += 1)
-            {
-                for(int ll = 0; ll < imgHdr.imgHeight; ll += 1)
-                {
-                    layerOne->GetNeurons()[ii].inputArr[jj][kk][ll] = 0;
-                    layerOne->GetNeurons()[ii].weight[jj][kk][ll] = 0;
-                }
-            }
 
+        for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
+        {
+            for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
+            {
+                layerOne->GetNeurons()[ii].inputArr[jj][kk] = 0;
+                layerOne->GetNeurons()[ii].weight[jj][kk] = 0;
+            }
         }
 
         layerOne->GetNeurons()[ii].bias = 0;
@@ -72,20 +69,19 @@ void Perceptron::ResizePerceptron(ImageHeader imgHdr, LabelHeader lblHdr, int in
     std::cout << "Finished resizing perceptron..." << std::endl;
 }
 
-void Perceptron::SetLayer(GLdouble*** imgInput, ImageHeader imgHdr)
+void Perceptron::SetLayer(GLdouble** imgInput, ImageHeader imgHdr)
 {
     for(int ii = 0; ii < 10; ii += 1)
     {
-        for(int jj = 0; jj < imgHdr.maxImages; jj += 1)
+
+        for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
         {
-            for(int kk = 0; kk < imgHdr.imgWidth; kk += 1)
+            for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
             {
-                for(int ll = 0; ll < imgHdr.imgHeight; ll += 1)
-                {
-                    layerOne->GetNeurons()[ii].inputArr[jj][kk][ll] = imgInput[jj][kk][ll];
-                }
+                layerOne->GetNeurons()[ii].inputArr[jj][kk] = imgInput[jj][kk];
             }
         }
+
     }
 }
 

@@ -20,8 +20,8 @@ class Neuron {
         void Swap(Neuron &rhsNeuron);
 
         void ResizeNeuron(ImageHeader imgHdr, LabelHeader lblHdr);
-        GLdouble *** inputArr;
-        GLdouble *** weight;
+        GLdouble ** inputArr;
+        GLdouble ** weight;
         GLdouble output;
         GLdouble bias;
 

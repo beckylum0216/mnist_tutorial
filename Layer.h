@@ -22,8 +22,8 @@ class Layer {
 
 
     private:
-        Neuron * theNeurons;
-        int neuronSize;
+        Neuron * theLayer;
+        int layerSize;
         void Swap(Layer &rhsVar);
 
 };

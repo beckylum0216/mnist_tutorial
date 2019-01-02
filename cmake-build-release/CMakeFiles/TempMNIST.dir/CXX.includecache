@@ -40,11 +40,21 @@ D:/tempMNIST/ImageHeader.h
 
 D:/tempMNIST/LabelHeader.h
 
-D:/tempMNIST/Neuron.cpp
+D:/tempMNIST/Layer.cpp
+vector
+-
 iostream
 -
+Layer.h
+D:/tempMNIST/Layer.h
+
+D:/tempMNIST/Layer.h
 Neuron.h
 D:/tempMNIST/Neuron.h
+ImageHeader.h
+D:/tempMNIST/ImageHeader.h
+LabelHeader.h
+D:/tempMNIST/LabelHeader.h
 
 D:/tempMNIST/Neuron.h
 GL/freeglut.h

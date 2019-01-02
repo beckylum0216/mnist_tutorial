@@ -34,25 +34,7 @@ void TrainModel(Perceptron & layerOne)
     layerOne.InitLayer(imgHdr, lblHdr, 10);
     layerOne.SetLayer(getFiles.ReadImageFile(imgFile, imgHdr), imgHdr);
     layerOne.SetLabel(getFiles.ReadLabelFile(lblFile, lblHdr), lblHdr);
-    getFiles.DeallocateMemory();
-
-
-    for(int ii = 0; ii < 10; ii += 1)
-    {
-        for(int jj = 0; jj < imgHdr.maxImages; jj += 1)
-        {
-            for(int kk = 0; kk < imgHdr.imgWidth; kk += 1)
-            {
-                for(int ll = 0; ll < imgHdr.imgHeight; ll += 1)
-                {
-                    std::cout << layerOne.GetLayer()->GetNeurons()[ii].inputArr[jj][kk][ll];
-                }
-
-                std::cout << std::endl;
-            }
-        }
-    }
-
+    //getFiles.DeallocateMemory();
 
 }
 
@@ -93,12 +75,11 @@ void reshape(int w, int h)
 int main(int argc, char** argv)
 {
     GetHeaders();
-    std::cout << "Height: " <<imgHdr.imgHeight << std::endl;
-    std::cout << "Width: " << imgHdr.imgWidth << std::endl;
     std::cout << "Checkpoint 1..." << std::endl;
     oneLayerNN.ResizePerceptron(imgHdr, lblHdr, 10);
-    TrainModel(oneLayerNN);
-
+    std::cout << "Finished running program..." << std::endl;
+    //TrainModel(oneLayerNN);
+    return 0;
 }
 
 /*

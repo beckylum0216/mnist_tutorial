@@ -17,7 +17,7 @@ class Perceptron {
         Layer * GetLayer();
         void InitLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize);
         void ResizePerceptron(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize);
-        void SetLayer(GLdouble*** imgInput, ImageHeader imgHdr);
+        void SetLayer(GLdouble** imgInput, ImageHeader imgHdr);
         void SetLabel(GLdouble * lblInput, LabelHeader lblHdr);
         void CalculateWeight();
 
