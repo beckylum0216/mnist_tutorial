@@ -22,43 +22,24 @@ Neuron::Neuron()
 
 Neuron::Neuron(ImageHeader imgHdr, LabelHeader lblHdr)
 {
-    GLdouble ** tempArr;
-    GLdouble ** tempWeight;
 
-    // initialise new arrays;
-
-    tempArr = new GLdouble*[imgHdr.imgWidth];
-    tempWeight = new GLdouble*[imgHdr.imgWidth];
-    for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
+    inputArr = new GLdouble * [imgHdr.imgWidth]();
+    weight = new GLdouble * [imgHdr.imgWidth]();
+    for(int ii = 0; ii < imgHdr.imgWidth; ii += 1)
     {
-        tempArr[jj] = new GLdouble[imgHdr.imgHeight];
-        tempWeight[jj] = new GLdouble[imgHdr.imgHeight];
+        inputArr[ii] = new GLdouble[imgHdr.imgHeight]();
+        weight[ii] = new GLdouble[imgHdr.imgHeight]();
     }
 
+    output = 0;
+    bias = 0;
 
 
-    for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
-    {
-        for(int kk = 0; kk < imgHdr.imgHeight; kk += 1)
-        {
-            tempArr[jj][kk] = inputArr[jj][kk];
-            tempWeight[jj][kk] = weight[jj][kk];
-        }
-    }
-
-
-    delete [] inputArr;
-    delete [] weight;
-
-    inputArr = tempArr;
-    weight = tempWeight;
-
-    delete [] tempArr;
-    delete [] tempWeight;
 }
 
 Neuron::~Neuron()
 {
+    std::cout << "Deleting neuron..." << std::endl;
     delete [] inputArr;
     delete [] weight;
 }

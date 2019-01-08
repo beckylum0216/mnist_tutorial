@@ -20,13 +20,13 @@ class UtilityFunctions {
         ImageHeader ReadImageHeader(std::string theFile);
         LabelHeader ReadLabelHeader(std::string theFile);
 
-        GLdouble ** ReadImageFile(std::string theFile, ImageHeader  imageHdr);
+        GLdouble *** ReadImageFile(std::string theFile, ImageHeader  imageHdr);
         GLdouble * ReadLabelFile(std::string theFile, LabelHeader  labelHdr);
         void DeallocateMemory();
         void DisplayImage(GLdouble ***inputArr);
 
     private:
-        GLdouble  ** imgMatrix;
+        GLdouble *** imgMatrix;
         GLdouble * lblMatrix;
 
 };

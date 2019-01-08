@@ -9,6 +9,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="Default (c2f6e920-558c-449a-a9ec-fdd0ed71919a)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Default (dc7c1e1c-f47a-4000-867b-e42cb86ba574)">
         <serverdata>
           <mappings>

@@ -49,10 +49,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.6\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\tempMNIST
+CMAKE_SOURCE_DIR = D:\tempML\tempMNIST
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\tempMNIST\cmake-build-release
+CMAKE_BINARY_DIR = D:\tempML\tempMNIST\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -115,9 +115,9 @@ list_install_components\fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\tempMNIST\cmake-build-release\CMakeFiles D:\tempMNIST\cmake-build-release\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\tempML\tempMNIST\cmake-build-release\CMakeFiles D:\tempML\tempMNIST\cmake-build-release\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\tempMNIST\cmake-build-release\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\tempML\tempMNIST\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -1,4 +1,6 @@
-"C:\Program Files\JetBrains\CLion 2018.2.6\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - NMake Makefiles" D:\tempMNIST
--- Configuring done
--- Generating done
--- Build files have been written to: D:/tempMNIST/cmake-build-release
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /mnt/d/tempML/tempMNIST
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.13 or higher is required.  You are running version 3.10.2
+
+
+-- Configuring incomplete, errors occurred!

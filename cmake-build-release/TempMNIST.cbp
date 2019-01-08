@@ -8,23 +8,23 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TempMNIST">
-				<Option output="D:/tempMNIST/cmake-build-release/TempMNIST.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option output="D:/tempML/tempMNIST/cmake-build-release/TempMNIST.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="D:/tempMNIST/headers"/>
+					<Add directory="D:/tempML/tempMNIST/headers"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
@@ -35,20 +35,20 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 TempMNIST"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 TempMNIST"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TempMNIST/fast">
-				<Option output="D:/tempMNIST/cmake-build-release/TempMNIST.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option output="D:/tempML/tempMNIST/cmake-build-release/TempMNIST.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="D:/tempMNIST/headers"/>
+					<Add directory="D:/tempML/tempMNIST/headers"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
@@ -59,109 +59,109 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 TempMNIST/fast"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 TempMNIST/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="install/local">
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 install/local"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 install/local"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="install">
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 install"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 install"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="list_install_components">
-				<Option working_dir="D:/tempMNIST/cmake-build-release"/>
+				<Option working_dir="D:/tempML/tempMNIST/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 list_install_components"/>
-					<CompileFile command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 list_install_components"/>
+					<CompileFile command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\tempML\tempMNIST\cmake-build-release\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/tempMNIST/ImageHeader.cpp">
+		<Unit filename="D:/tempML/tempMNIST/ImageHeader.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/ImageHeader.h">
+		<Unit filename="D:/tempML/tempMNIST/ImageHeader.h">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/LabelHeader.cpp">
+		<Unit filename="D:/tempML/tempMNIST/LabelHeader.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/LabelHeader.h">
+		<Unit filename="D:/tempML/tempMNIST/LabelHeader.h">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Layer.cpp">
+		<Unit filename="D:/tempML/tempMNIST/Layer.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Layer.h">
+		<Unit filename="D:/tempML/tempMNIST/Layer.h">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Neuron.cpp">
+		<Unit filename="D:/tempML/tempMNIST/Neuron.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Neuron.h">
+		<Unit filename="D:/tempML/tempMNIST/Neuron.h">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Perceptron.cpp">
+		<Unit filename="D:/tempML/tempMNIST/Perceptron.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Perceptron.h">
+		<Unit filename="D:/tempML/tempMNIST/Perceptron.h">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Result.cpp">
+		<Unit filename="D:/tempML/tempMNIST/Result.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/Result.h">
+		<Unit filename="D:/tempML/tempMNIST/Result.h">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/UtilityFunctions.cpp">
+		<Unit filename="D:/tempML/tempMNIST/UtilityFunctions.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/UtilityFunctions.h">
+		<Unit filename="D:/tempML/tempMNIST/UtilityFunctions.h">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/main.cpp">
+		<Unit filename="D:/tempML/tempMNIST/main.cpp">
 			<Option target="TempMNIST"/>
 		</Unit>
-		<Unit filename="D:/tempMNIST/CMakeLists.txt">
+		<Unit filename="D:/tempML/tempMNIST/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -83,7 +83,7 @@ LabelHeader UtilityFunctions::ReadLabelHeader(std::string theFile)
 }
 
 
-GLdouble ** UtilityFunctions::ReadImageFile(std::string theFile, ImageHeader imageHdr)
+GLdouble*** UtilityFunctions::ReadImageFile(std::string theFile, ImageHeader imageHdr)
 {
     std::cout << "Reading image file..." << std::endl;
 
@@ -99,33 +99,43 @@ GLdouble ** UtilityFunctions::ReadImageFile(std::string theFile, ImageHeader ima
     if(imageFile.is_open())
     {
         //skip the first 4 lines
-        imageFile.read((char *) tempHdr.magicNumber, sizeof(imageHdr.magicNumber));
-        imageFile.read((char *) tempHdr.maxImages, sizeof(imageHdr.maxImages));
-        imageFile.read((char *) tempHdr.imgWidth, sizeof(imageHdr.imgWidth));
-        imageFile.read((char *) tempHdr.imgHeight, sizeof(imageHdr.imgHeight));
+        std::cout << "Reading psuedo-headers..." << std::endl;
+        imageFile.read((char *) &tempHdr.magicNumber, sizeof(imageHdr.magicNumber));
+        imageFile.read((char *) &tempHdr.maxImages, sizeof(imageHdr.maxImages));
+        imageFile.read((char *) &tempHdr.imgWidth, sizeof(imageHdr.imgWidth));
+        imageFile.read((char *) &tempHdr.imgHeight, sizeof(imageHdr.imgHeight));
 
+        std::cout << "Creating temporary arrays..." << std::endl;
         // Initialise array and start reading file
-        imgMatrix = new GLdouble*[imageHdr.imgHeight];
-        for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
+        imgMatrix = new GLdouble **[imageHdr.maxImages]();
+        for(int ii = 0; ii < imageHdr.maxImages; ii += 1)
         {
-            imgMatrix[jj] = new GLdouble[imageHdr.imgWidth]();
-        }
-
-
-        for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
-        {
-            for(int kk = 0; kk < imageHdr.imgHeight; kk += 1)
+            imgMatrix[ii] = new GLdouble*[imageHdr.imgHeight];
+            for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
             {
-                unsigned char temp = 0;
-                imageFile.read((char*) &temp, sizeof(temp));
-                imgMatrix[jj][kk] = temp;
+                imgMatrix[ii][jj] = new GLdouble[imageHdr.imgWidth]();
             }
         }
 
 
+        std::cout << "reading images..." << std::endl;
+        // read file and store into array
+        for(int ii = 0; ii < imageHdr.maxImages; ii += 1)
+        {
+            for(int jj = 0; jj < imageHdr.imgWidth; jj += 1)
+            {
+                for(int kk = 0; kk < imageHdr.imgHeight; kk += 1)
+                {
+                    unsigned char temp = 0;
+                    imageFile.read((char*) &temp, sizeof(temp));
+                    imgMatrix[ii][jj][kk] = temp;
+                }
+            }
+        }
     }
 
     imageFile.close();
+    std::cout << "Finished reading file..." << std::endl;
 
     return imgMatrix;
 }
@@ -137,8 +147,6 @@ GLdouble * UtilityFunctions::ReadLabelFile(std::string theFile, LabelHeader labe
     LabelHeader tempHdr;
     std::ifstream labelFile;
     labelFile.open(theFile, std::ios::binary);
-
-
 
     if(labelFile.is_open())
     {

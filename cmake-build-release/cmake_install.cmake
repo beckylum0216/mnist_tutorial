@@ -1,4 +1,4 @@
-# Install script for directory: D:/tempMNIST
+# Install script for directory: D:/tempML/tempMNIST
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,14 +34,14 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "D:/tempMNIST/bin/TempMNIST.exe")
+   "D:/tempML/tempMNIST/bin/TempMNIST.exe")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "D:/tempMNIST/bin" TYPE EXECUTABLE FILES "D:/tempMNIST/cmake-build-release/TempMNIST.exe")
+file(INSTALL DESTINATION "D:/tempML/tempMNIST/bin" TYPE EXECUTABLE FILES "D:/tempML/tempMNIST/cmake-build-release/TempMNIST.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -52,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/tempMNIST/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/tempML/tempMNIST/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

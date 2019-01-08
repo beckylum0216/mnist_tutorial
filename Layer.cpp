@@ -15,17 +15,20 @@ Layer::Layer()
 
 Layer::Layer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize)
 {
-    std::cout << "running layer resize" << std::endl;
-   for(int ii = 0; ii < layerSize; ii += 1)
-   {
-       theLayer[ii].ResizeNeuron(imgHdr, lblHdr);
-   }
-   layerSize = inputSize;
-   std::cout << "layer resized..." << std::endl;
+    std::cout << "running overloaded layer" << std::endl;
+    theLayer = new Neuron[inputSize]();
+    for(int ii = 0; ii < inputSize; ii += 1)
+    {
+        theLayer[ii].ResizeNeuron(imgHdr, lblHdr);
+    }
+
+
+   std::cout << "layer created..." << std::endl;
 }
 
 Layer::~Layer()
 {
+    std::cout << "deleting layers..." << std::endl;
     delete [] theLayer;
 }
 
@@ -85,9 +88,6 @@ void Layer::ResizeLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize)
         theLayer[ii].ResizeNeuron(imgHdr, lblHdr);
     }
 
-
-    // copying old values
-
     for(int ii = 0; ii < inputSize; ii += 1)
     {
         for(int jj = 0; jj < imgHdr.imgWidth; jj += 1)
@@ -100,6 +100,8 @@ void Layer::ResizeLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize)
         }
 
     }
+
+    std::cout << "deleting tempneurons... " << std::endl;
 
     delete[] tempNeuron;
 

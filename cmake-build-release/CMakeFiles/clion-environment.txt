@@ -1,4 +1,4 @@
-ToolSet: 15.0 (local)@C:\Program Files (x86)\Microsoft Visual Studio\2017\Community
+ToolSet: Ubuntu 18.04.1 LTS (local)@C:\Users\becky\AppData\Local\Microsoft\WindowsApps\ubuntu.exe
 Options: 
 
 Options:

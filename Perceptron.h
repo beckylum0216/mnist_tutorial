@@ -17,9 +17,16 @@ class Perceptron {
         Layer * GetLayer();
         void InitLayer(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize);
         void ResizePerceptron(ImageHeader imgHdr, LabelHeader lblHdr, int inputSize);
-        void SetLayer(GLdouble** imgInput, ImageHeader imgHdr);
+        //training perceptron
+        void SetLayer(GLdouble** imgInput, ImageHeader imgHdr, int inputSize);
         void SetLabel(GLdouble * lblInput, LabelHeader lblHdr);
-        void CalculateWeight();
+        void CalculateOutput(ImageHeader imgHdr, int inputSize);
+        GLdouble CalculateError(ImageHeader imgHdr, int targetNeuron);
+        void UpdateNeuronWeights(ImageHeader imgHdr, int targetNeuron, GLdouble stdError, GLdouble learningRate);
+
+        // testing perceptron
+        std::vector <GLdouble> SetTargetOutput(int targetIndex, int outputSize);
+        int  GetLayerPrediction(int outputSize);
 
     private:
         Layer * layerOne;
